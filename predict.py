@@ -1,9 +1,4 @@
 from keras.models import load_model
-import keras
-from keras.models import Sequential
-from keras.layers import Dense, Dropout, Flatten
-from keras.layers import Conv2D, MaxPooling2D, Conv3D, BatchNormalization, Activation
-from keras import backend as K
 import os
 from PIL import Image
 import numpy as np
@@ -11,11 +6,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import imshow
-import pandas as pd
+from path import PATH
 
 # load model
 model = load_model('brain-tumor-model.h5')
-classes = os.listdir('C:/Users/po/Downloads/Brain-Tumor-Classification/Brain-Tumor-Classification2/Brain-Tumor-Classification-DataSet/Training')
+classes = os.listdir(PATH+'Training')
 
 def names(number):
     if(number == 0):
@@ -27,7 +22,7 @@ def names(number):
     elif(number == 3):
         return classes[3]
 
-img = Image.open('C:/Users/po/Downloads/Brain-Tumor-Classification-DataSet/Brain-Tumor-Classification-DataSet/Testing/pituitary_tumor/image(15).jpg')
+img = Image.open(PATH+'Testing/pituitary_tumor/image(15).jpg')
 x = np.array(img.resize((150,150)))
 x = x.reshape(1,150,150,3)
 answ = model.predict_on_batch(x)

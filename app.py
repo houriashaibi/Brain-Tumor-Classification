@@ -14,12 +14,13 @@ from sklearn.preprocessing import OneHotEncoder
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import imshow
 import pandas as pd
+from path import PATH
 
 
 app = Flask(__name__)
 
 model = load_model('brain-tumor-model.h5')
-classes = os.listdir('C:/Users/po/Downloads/Brain-Tumor-Classification/Brain-Tumor-Classification2/Brain-Tumor-Classification-DataSet/Training')
+classes = os.listdir(PATH+'Training')
 
 
 def names(number):

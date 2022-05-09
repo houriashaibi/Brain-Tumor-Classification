@@ -1,19 +1,14 @@
-import keras
 from keras.models import Sequential
-from keras.layers import Dense, Dropout, Flatten
-from keras.layers import Conv2D, MaxPooling2D, Conv3D, BatchNormalization, Activation
-from keras import backend as K
 import os
 from PIL import Image
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
-import matplotlib.pyplot as plt
 from matplotlib.pyplot import imshow
-import pandas as pd
+from path import PATH
 
-
-classes = os.listdir("C:/Users/po/Downloads/Brain-Tumor-Classification/Brain-Tumor-Classification2/Brain-Tumor-Classification-DataSet/Training")
+classes = os.listdir(
+    PATH+"Training")
 # need to save classes
 
 enc = OneHotEncoder()
@@ -34,7 +29,7 @@ def names(number):
 trainData = []
 trainLabel = []
 dim = (150, 150)
-trainPath = "C:/Users/po/Downloads/Brain-Tumor-Classification/Brain-Tumor-Classification2/Brain-Tumor-Classification-DataSet/Training"
+trainPath = PATH +"Training"
 index = 0
 txt = open("classes.txt", "w")  # write mode
 for dir in os.listdir(trainPath):
@@ -66,7 +61,7 @@ print(trainLabel.shape)
 testData = []
 testLabel = []
 dim = (150, 150)
-testPath = "C:/Users/po/Downloads/Brain-Tumor-Classification/Brain-Tumor-Classification2/Brain-Tumor-Classification-DataSet/Testing"
+testPath = PATH+"Testing"
 index = 0
 for dir in os.listdir(testPath):
     filePaths = []
