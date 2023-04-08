@@ -1,8 +1,6 @@
 # Brain-Tumor-Classification
-Brain Cancer Detection
-======================
 
-Brain Cancer Detection is a Python-based project that utilizes deep learning models to classify brain tumor images and derma diseases. The project uses Keras to load the models and RabbitMQ to handle messaging between the various components. This repository contains the main code for processing and classifying images.
+Brain Tumor Classification is a Python-based project that utilizes deep learning models to classify brain tumor images and derma diseases. The project uses Keras to load the models and RabbitMQ to handle messaging between the various components. This repository contains the main code for processing and classifying images.
 
 Requirements
 ------------
